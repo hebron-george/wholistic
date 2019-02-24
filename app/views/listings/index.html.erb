@@ -1,35 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<main role="main" class="inner cover">
-  <h1>Listings</h1>
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="">
+      <h1>Listings</h1>
+      <table class="table table-striped table-hover table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Address</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.name %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.category %></td>
-        <td><%= listing.address %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <%= link_to 'New Listing', new_listing_path %>
-</main>
+      <tbody>
+        <% @listings.each do |listing| %>
+          <tr>
+            <td><%= listing.name %></td>
+            <td><%= listing.description %></td>
+            <td><%= listing.category %></td>
+            <td><%= listing.address %></td>
+            <td><%= link_to 'Show', listing %></td>
+            <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+            <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      </table>
+      <%= link_to 'New Listing', new_listing_path %>
+    </div>
+  </div>
+</div>
